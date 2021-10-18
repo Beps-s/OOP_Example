@@ -10,11 +10,17 @@ class Shape {
 	}
 }
 
-let square = new Shape("square", 2, 7);
-let triangle = new Shape("triangle", 1, 3);
+class Square extends Shape {
+	constructor(sideLength) {
+		super("square" ,4 ,sideLength);
+	}
+	calcArea(){
+		return this.sideLength * this.sideLength
+	}
+}
+
+let square = new Square(5);
 
 console.log(square);
 console.log(square.calcPerimeter());
-
-console.log(triangle);
-console.log(triangle.calcPerimeter());
+console.log(square.calcArea());
